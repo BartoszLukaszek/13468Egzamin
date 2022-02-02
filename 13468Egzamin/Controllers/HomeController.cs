@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace _13468Egzamin.Controllers
 {
-    [Route("api/Lista")]
+    
     public class HomeController : Controller
     {
         

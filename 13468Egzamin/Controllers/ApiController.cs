@@ -12,11 +12,11 @@ namespace _13468Egzamin.Controllers
 
         public ApiController()
         {
-            Lista = new List<Class>();
+            Lista = new List<Class>()
             {
-                new Class() { Id = 1, title = "AAAA", author = "BBBB", price = "100" };
-                new Class() { Id = 2, title = "CCCC", author = "DDDD", price = "50" };
-                new Class() { Id = 3, title = "EEEE", author = "FFFF", price = "10" };
+                new Class() { Id = 1, title = "AAAA", author = "BBBB", price = "100",},
+                new Class() { Id = 2, title = "CCCC", author = "DDDD", price = "50", },
+                new Class() { Id = 3, title = "EEEE", author = "FFFF", price = "10", }
             };
 
         }
@@ -32,7 +32,7 @@ namespace _13468Egzamin.Controllers
           
            var res = Lista.Find(x => x.Id == id);
            Lista.Remove(res);
-            return NoContent();
+           return NoContent();
 
         }
 
