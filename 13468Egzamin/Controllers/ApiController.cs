@@ -1,10 +1,10 @@
 ﻿using _13468Egzamin.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Linq;
 namespace _13468Egzamin.Controllers
 {
-    [Route("api/controller")]
+    [Route("api/books")]
     [ApiController]
     public class ApiController : ControllerBase
     {
@@ -24,6 +24,16 @@ namespace _13468Egzamin.Controllers
         public ActionResult<IEnumerable<Class>> GetCard()
         {
             return Lista.ToList();
+        }
+        
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+          
+           var res = Lista.Find(x => x.Id == id);
+           Lista.Remove(res);
+            return NoContent();
+
         }
 
        
